@@ -60,7 +60,10 @@ public class FindFuelTypeCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(fuelType);
+        if(fuelType > 0)
+            return String.valueOf(fuelType);
+        else
+            return "NODATA";
     }
 
     /** {@inheritDoc} */

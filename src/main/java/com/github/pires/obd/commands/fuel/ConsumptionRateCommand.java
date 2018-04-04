@@ -55,8 +55,12 @@ public class ConsumptionRateCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(fuelRate);
+        if(fuelRate > 0.0)
+            return String.valueOf(fuelRate);
+        else
+            return "NODATA";
     }
+
 
     /** {@inheritDoc} */
     @Override

@@ -70,13 +70,19 @@ public class VinCommand extends PersistentCommand {
         return AvailableCommandNames.VIN.getValue();
     }
 
+
+
     /**
      * {@inheritDoc}
      */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(vin);
+        if(vin.length() > 0)
+            return String.valueOf(vin);
+        else
+            return "NODATA";
     }
+
 
     /**
      * {@inheritDoc}

@@ -62,8 +62,12 @@ public class DistanceSinceCCCommand extends ObdCommand
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(km);
+        if(km>0.0)
+            return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(km);
+        else
+            return "NODATA";
     }
+
 
     /** {@inheritDoc} */
     @Override
@@ -84,6 +88,18 @@ public class DistanceSinceCCCommand extends ObdCommand
      */
     public int getKm() {
         return km;
+    }
+
+    /**
+     * <p>Getter for the field <code>km</code>.</p>
+     *
+     * @return a int. -1 if error.
+     */
+    public int getKm_filtered(){
+        if(km > 0)
+            return km;
+        else
+            return -1;
     }
 
     /**

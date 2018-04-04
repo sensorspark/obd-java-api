@@ -48,8 +48,14 @@ public class AirFuelRatioCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(getAirFuelRatio());
+        double aafr = getAirFuelRatio();
+        if(aafr > 0.0)
+            return String.valueOf(getAirFuelRatio());
+        else
+            return  "NODATA";
     }
+
+
 
     /**
      * <p>getAirFuelRatio.</p>

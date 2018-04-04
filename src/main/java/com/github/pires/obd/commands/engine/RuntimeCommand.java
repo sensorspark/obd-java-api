@@ -59,8 +59,12 @@ public class RuntimeCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(value);
+        if(value > 0)
+            return String.valueOf(value);
+        else
+            return "NODATA";
     }
+
 
     /** {@inheritDoc} */
     @Override

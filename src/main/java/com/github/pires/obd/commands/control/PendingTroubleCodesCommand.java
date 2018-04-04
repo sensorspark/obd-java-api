@@ -106,12 +106,16 @@ public class PendingTroubleCodesCommand extends ObdCommand {
         return codes.toString();
     }
 
+
+
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(codes);
+        if(codes.length() > 0)
+            return String.valueOf(codes);
+        else
+            return "NODATA";
     }
-
 
     /** {@inheritDoc} */
     @Override

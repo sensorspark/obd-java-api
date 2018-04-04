@@ -48,7 +48,11 @@ public class WidebandAirFuelRatioCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(getWidebandAirFuelRatio());
+        double wbandair=getWidebandAirFuelRatio();
+        if (wbandair>0.0)
+            return String.valueOf(getWidebandAirFuelRatio());
+        else
+            return "NODATA";
     }
 
     /**

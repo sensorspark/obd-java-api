@@ -91,7 +91,10 @@ public abstract class PressureCommand extends ObdCommand implements
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(pressure);
+        if(pressure > 0.0)
+            return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(pressure);
+        else
+        return "NODATA";
     }
 
     /** {@inheritDoc} */

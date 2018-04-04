@@ -64,8 +64,12 @@ public class ModuleVoltageCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(voltage);
+        if(voltage > 0.0)
+            return String.valueOf(voltage);
+        else
+            return "NODATA";
     }
+
 
     /**
      * <p>Getter for the field <code>voltage</code>.</p>
@@ -75,6 +79,7 @@ public class ModuleVoltageCommand extends ObdCommand {
     public double getVoltage() {
         return voltage;
     }
+
 
     /** {@inheritDoc} */
     @Override

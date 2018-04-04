@@ -55,6 +55,8 @@ public class AbsoluteLoadCommand extends PercentageObdCommand {
         return percentage;
     }
 
+
+
     /** {@inheritDoc} */
     @Override
     public String getName() {

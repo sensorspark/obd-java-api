@@ -109,7 +109,10 @@ public class PermanentTroubleCodesCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(codes);
+        if(codes.length()>0)
+            return String.valueOf(codes);
+        else
+            return "NODATA";
     }
 
 

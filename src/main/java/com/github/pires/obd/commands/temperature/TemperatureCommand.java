@@ -65,7 +65,10 @@ public abstract class TemperatureCommand extends ObdCommand implements
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(temperature);
+        if(temperature > 0.0)
+            return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(temperature);
+        else
+            return "NODATA";
     }
 
     /** {@inheritDoc} */
