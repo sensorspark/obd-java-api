@@ -60,6 +60,7 @@ public enum AvailableCommandNames {
     IGNITION_MONITOR("Ignition monitor"),
     FUEL_SYSTEM_STATUS("Fuel system status"),
     COMMANDED_SECONDARY_AIR_STATUS("Commanded Secondary Air Status"),
+    OXYGEN_SENSORS_PRESENT("Oxygen sensors present")
     ;
 
     private final String value;
