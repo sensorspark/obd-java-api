@@ -114,7 +114,7 @@ public class PendingTroubleCodesCommand extends ObdCommand {
         if(codes.length() > 0)
             return String.valueOf(codes);
         else
-            return "NODATA";
+            return "OK";
     }
 
     /** {@inheritDoc} */

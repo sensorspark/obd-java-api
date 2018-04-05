@@ -65,7 +65,7 @@ public class ModuleVoltageCommand extends ObdCommand {
     @Override
     public String getCalculatedResult() {
         if(voltage > 0.0)
-            return String.valueOf(voltage);
+            return String.format("%.1f", voltage);
         else
             return "NODATA";
     }

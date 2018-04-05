@@ -69,7 +69,10 @@ public abstract class PercentageObdCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        return String.valueOf(percentage);
+        if(percentage >= 0.0)
+            return String.format("%.1f", percentage);
+        else
+            return "NODATA";
     }
 
 }

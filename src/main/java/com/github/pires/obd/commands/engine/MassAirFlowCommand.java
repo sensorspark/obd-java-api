@@ -56,7 +56,7 @@ public class MassAirFlowCommand extends ObdCommand {
     @Override
     public String getCalculatedResult() {
         if(maf > 0.0)
-            return String.valueOf(maf);
+            return String.format("%.2f", maf);
         else
             return "NODATA";
     }

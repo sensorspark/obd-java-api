@@ -63,7 +63,9 @@ public class DistanceMILOnCommand extends ObdCommand
     @Override
     public String getCalculatedResult() {
         if(km>0.0)
-            return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(km);
+            return useImperialUnits ? String.format("%.2f", getImperialUnit())
+                    : String.format("%d", km);
+            //return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(km);
         else
             return "NODATA";
     }

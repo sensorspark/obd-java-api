@@ -87,7 +87,8 @@ public class SpeedCommand extends ObdCommand implements SystemOfUnits {
     public String getCalculatedResult() {
         double speed = getMetricSpeed();
         if(speed >= 0.0)
-            return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(getMetricSpeed());
+            return useImperialUnits ? String.format("%.2f", getImperialUnit())
+                    : String.format("%d", getMetricSpeed());
         else
             return "NODATA";
     }
@@ -105,17 +106,5 @@ public class SpeedCommand extends ObdCommand implements SystemOfUnits {
         return AvailableCommandNames.SPEED.getValue();
     }
 
-    /**
-     * <p>Intelligent Getter for the field <code>metricSpeed</code>.</p>
-     *
-     * @return the speed in metric units. Returns -1 in case of error.
-     */
-    public int getMetricSpeed_filtered() {
-
-        if(metricSpeed >= 0)
-            return metricSpeed;
-        else
-            return -1;
-    }
 
 }

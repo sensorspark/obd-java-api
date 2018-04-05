@@ -50,7 +50,7 @@ public class AirFuelRatioCommand extends ObdCommand {
     public String getCalculatedResult() {
         double aafr = getAirFuelRatio();
         if(aafr > 0.0)
-            return String.valueOf(getAirFuelRatio());
+            return String.format("%.2f", aafr);
         else
             return  "NODATA";
     }

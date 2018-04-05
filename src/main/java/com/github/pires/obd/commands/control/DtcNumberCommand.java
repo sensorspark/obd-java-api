@@ -67,10 +67,9 @@ public class DtcNumberCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        if(codeCount > 0)
-            return String.valueOf(codeCount);
-        else
-            return "NODATA";
+            //return String.valueOf(codeCount);
+            final String res = milOn ? "MIL is ON" : "MIL is OFF";
+            return "( " + res + codeCount + " codes )";
     }
 
     /**

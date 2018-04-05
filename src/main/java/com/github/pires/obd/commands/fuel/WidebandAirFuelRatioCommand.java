@@ -50,7 +50,7 @@ public class WidebandAirFuelRatioCommand extends ObdCommand {
     public String getCalculatedResult() {
         double wbandair=getWidebandAirFuelRatio();
         if (wbandair>0.0)
-            return String.valueOf(getWidebandAirFuelRatio());
+            return String.format("%.2f", wbandair);
         else
             return "NODATA";
     }

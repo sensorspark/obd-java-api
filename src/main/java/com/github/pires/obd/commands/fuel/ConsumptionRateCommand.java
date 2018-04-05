@@ -56,7 +56,7 @@ public class ConsumptionRateCommand extends ObdCommand {
     @Override
     public String getCalculatedResult() {
         if(fuelRate > 0.0)
-            return String.valueOf(fuelRate);
+            return String.format("%.1f", fuelRate);
         else
             return "NODATA";
     }
