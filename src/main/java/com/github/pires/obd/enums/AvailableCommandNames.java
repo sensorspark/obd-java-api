@@ -65,7 +65,8 @@ public enum AvailableCommandNames {
     COMMANDED_EGR("Commanded EGR position"),
     EGR_ERROR("EGR error in position"),
     COMMANDED_EVAPORATIVE_PURGE("Commanded evaporative purge"),
-    EVAPORATIVE_VAPOR_SYSTEM_PRESSURE("Evaporative vapor system pressure")
+    EVAPORATIVE_VAPOR_SYSTEM_PRESSURE("Evaporative vapor system pressure"),
+    CATALYST_TEMPERATURE("Catalyst temperature")
 
     ;
 
