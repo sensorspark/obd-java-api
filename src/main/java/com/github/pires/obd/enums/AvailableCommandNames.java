@@ -64,7 +64,9 @@ public enum AvailableCommandNames {
     OXYGEN_SENSORS_PRESENT("Oxygen sensors present"),
     COMMANDED_EGR("Commanded EGR position"),
     EGR_ERROR("EGR error in position"),
-    COMMANDED_EVAPORATIVE_PURGE("Commanded evaporative purge")
+    COMMANDED_EVAPORATIVE_PURGE("Commanded evaporative purge"),
+    EVAPORATIVE_VAPOR_SYSTEM_PRESSURE("Evaporative vapor system pressure")
+
     ;
 
     private final String value;
