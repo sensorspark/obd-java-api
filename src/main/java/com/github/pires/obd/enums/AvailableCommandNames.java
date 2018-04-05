@@ -59,6 +59,7 @@ public enum AvailableCommandNames {
     DESCRIBE_PROTOCOL_NUMBER("Describe protocol number"),
     IGNITION_MONITOR("Ignition monitor"),
     FUEL_SYSTEM_STATUS("Fuel system status"),
+    COMMANDED_SECONDARY_AIR_STATUS("Commanded Secondary Air Status"),
     ;
 
     private final String value;
