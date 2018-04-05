@@ -57,7 +57,8 @@ public enum AvailableCommandNames {
     WIDEBAND_AIR_FUEL_RATIO("Wideband Air/Fuel Ratio"),
     DESCRIBE_PROTOCOL("Describe protocol"),
     DESCRIBE_PROTOCOL_NUMBER("Describe protocol number"),
-    IGNITION_MONITOR("Ignition monitor")
+    IGNITION_MONITOR("Ignition monitor"),
+    FUEL_SYSTEM_STATUS("Fuel system status"),
     ;
 
     private final String value;
