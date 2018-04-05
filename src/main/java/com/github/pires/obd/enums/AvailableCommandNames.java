@@ -61,7 +61,9 @@ public enum AvailableCommandNames {
     IGNITION_MONITOR("Ignition monitor"),
     FUEL_SYSTEM_STATUS("Fuel system status"),
     COMMANDED_SECONDARY_AIR_STATUS("Commanded Secondary Air Status"),
-    OXYGEN_SENSORS_PRESENT("Oxygen sensors present")
+    OXYGEN_SENSORS_PRESENT("Oxygen sensors present"),
+    COMMANDED_EGR("Commanded EGR position"),
+    EGR_ERROR("EGR error in position")
     ;
 
     private final String value;
