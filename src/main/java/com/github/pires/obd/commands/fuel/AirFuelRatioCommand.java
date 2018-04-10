@@ -15,6 +15,8 @@ package com.github.pires.obd.commands.fuel;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
+import java.text.DecimalFormat;
+
 /**
  * AFR
  *
@@ -49,8 +51,9 @@ public class AirFuelRatioCommand extends ObdCommand {
     @Override
     public String getCalculatedResult() {
         double aafr = getAirFuelRatio();
+        DecimalFormat df = new DecimalFormat("#.##");
         if(aafr > 0.0)
-            return String.format("%.2f", aafr);
+            return df.format(aafr);
         else
             return  "NODATA";
     }

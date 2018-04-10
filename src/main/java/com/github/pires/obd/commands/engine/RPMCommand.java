@@ -55,7 +55,7 @@ public class RPMCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        if(rpm > 0)
+        if(rpm >= 0)
             return String.format("%d", rpm);
         else
             return "NODATA";

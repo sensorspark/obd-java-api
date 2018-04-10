@@ -15,6 +15,8 @@ package com.github.pires.obd.commands.pressure;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.commands.SystemOfUnits;
 
+import java.text.DecimalFormat;
+
 /**
  * Abstract pressure command.
  *
@@ -91,9 +93,10 @@ public abstract class PressureCommand extends ObdCommand implements
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
+        DecimalFormat df = new DecimalFormat("#.##");
         if(pressure > 0.0)
             //return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(pressure);
-            return useImperialUnits ? String.format("%.1f", getImperialUnit())
+            return useImperialUnits ? df.format(getImperialUnit())
                     : String.format("%d", pressure);
         else
             return "NODATA";

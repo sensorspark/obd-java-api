@@ -12,6 +12,8 @@
  */
 package com.github.pires.obd.commands;
 
+import java.text.DecimalFormat;
+
 /**
  * Abstract class for percentage commands.
  *
@@ -69,8 +71,9 @@ public abstract class PercentageObdCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
+        DecimalFormat df = new DecimalFormat("#.##");
         if(percentage >= 0.0)
-            return String.format("%.1f", percentage);
+            return df.format(percentage);
         else
             return "NODATA";
     }

@@ -15,6 +15,8 @@ package com.github.pires.obd.commands.fuel;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
+import java.text.DecimalFormat;
+
 /**
  * Wideband AFR
  *
@@ -48,9 +50,10 @@ public class WidebandAirFuelRatioCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
+        DecimalFormat df = new DecimalFormat("#.##");
         double wbandair=getWidebandAirFuelRatio();
-        if (wbandair>0.0)
-            return String.format("%.2f", wbandair);
+        if (wbandair > 0.0)
+            return df.format(wbandair);
         else
             return "NODATA";
     }
