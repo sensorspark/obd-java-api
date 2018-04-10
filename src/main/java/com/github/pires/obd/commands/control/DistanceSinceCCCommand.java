@@ -16,6 +16,8 @@ import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.commands.SystemOfUnits;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
+import java.text.DecimalFormat;
+
 /**
  * Distance traveled since codes cleared-up.
  *
@@ -62,8 +64,9 @@ public class DistanceSinceCCCommand extends ObdCommand
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
+        DecimalFormat df = new DecimalFormat("#.##");
         if(km > 0.0)
-            return useImperialUnits ? String.format("%.2f", getImperialUnit())
+            return useImperialUnits ? df.format(getImperialUnit())
                     : String.format("%d", km);
             //return useImperialUnits ? String.valueOf(getImperialUnit()) : String.valueOf(km);
         else
