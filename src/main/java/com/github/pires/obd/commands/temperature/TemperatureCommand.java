@@ -16,6 +16,7 @@ import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.commands.SystemOfUnits;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 /**
  * Abstract temperature command.
@@ -67,10 +68,9 @@ public abstract class TemperatureCommand extends ObdCommand implements
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        DecimalFormat df = new DecimalFormat("#.##");
         if(temperature > 0.0)
-            return useImperialUnits ? df.format(getImperialUnit())
-                    : df.format(temperature);
+            return useImperialUnits ? String.format(Locale.US, "%.2f", getImperialUnit())
+                    : String.format(Locale.US, "%.2f", temperature);
         else
             return "NODATA";
     }

@@ -16,6 +16,7 @@ import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 /**
  * Fuel Consumption Rate per hour.
@@ -57,9 +58,8 @@ public class ConsumptionRateCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        DecimalFormat df = new DecimalFormat("#.##");
         if(fuelRate > 0.0)
-            return df.format(fuelRate);
+            return String.format(Locale.US, "%.2f", fuelRate);
         else
             return "NODATA";
     }

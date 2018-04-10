@@ -15,6 +15,7 @@ package com.github.pires.obd.commands.engine;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 /**
  * Mass Air Flow (MAF)
@@ -56,9 +57,8 @@ public class MassAirFlowCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        DecimalFormat df = new DecimalFormat("#.##");
         if(maf > 0.0)
-            return df.format(maf);
+            return String.format(Locale.US, "%.2f", maf);
         else
             return "NODATA";
     }

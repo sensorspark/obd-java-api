@@ -16,6 +16,7 @@ import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 /**
  * <p>ModuleVoltageCommand class.</p>
@@ -66,9 +67,8 @@ public class ModuleVoltageCommand extends ObdCommand {
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
-        DecimalFormat df = new DecimalFormat("#.##");
         if(voltage > 0.0)
-            return df.format(voltage);
+            return String.format(Locale.US, "%.2f", voltage);
         else
             return "NODATA";
     }
