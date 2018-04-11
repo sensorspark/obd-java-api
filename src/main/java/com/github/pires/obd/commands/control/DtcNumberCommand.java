@@ -60,16 +60,20 @@ public class DtcNumberCommand extends ObdCommand {
      * @return a {@link java.lang.String} object.
      */
     public String getFormattedResult() {
-        final String res = milOn ? "MIL is ON" : "MIL is OFF (";
-        return res + codeCount + " codes )";
+        final String res = milOn ? "MIL is ON" : "MIL is OFF";
+        return res + " (" +  codeCount + " codes )";
     }
 
     /** {@inheritDoc} */
     @Override
     public String getCalculatedResult() {
             //return String.valueOf(codeCount);
-            final String res = milOn ? "MIL is ON" : "MIL is OFF";
-            return "( " + res + codeCount + " codes )";
+            //final String res = milOn ? "MIL is ON " : "MIL is OFF ";
+            //return  res + " (" +  codeCount + " codes )";
+            if (codeCount==0)
+                return "OK";
+            else
+                return String.valueOf(codeCount);
     }
 
     /**
@@ -81,14 +85,6 @@ public class DtcNumberCommand extends ObdCommand {
         return codeCount;
     }
 
-    /**
-     * <p>Getter for the field <code>milOn</code>.</p>
-     *
-     * @return the state of the check engine light state.
-     */
-    public boolean getMilOn_filtered() {
-        return milOn;
-    }
 
     /**
      * <p>Getter for the field <code>milOn</code>.</p>
