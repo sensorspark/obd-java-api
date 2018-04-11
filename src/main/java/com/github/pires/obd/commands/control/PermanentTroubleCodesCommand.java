@@ -157,4 +157,10 @@ public class PermanentTroubleCodesCommand extends ObdCommand {
         return AvailableCommandNames.PERMANENT_TROUBLE_CODES.getValue();
     }
 
+    @Override
+    public String getCommandPID() {
+        //0A -- perTCC
+        return "PERTCC";
+    }
+
 }

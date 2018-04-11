@@ -158,4 +158,10 @@ public class PendingTroubleCodesCommand extends ObdCommand {
         return AvailableCommandNames.PENDING_TROUBLE_CODES.getValue();
     }
 
+    @Override
+    public String getCommandPID() {
+        //07 -- penTCC
+        return "PENTCC";
+    }
+
 }

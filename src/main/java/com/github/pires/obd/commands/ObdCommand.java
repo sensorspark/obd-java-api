@@ -374,7 +374,9 @@ public abstract class ObdCommand {
      * @return a {@link java.lang.String} object.
      * @since 1.0-RC12
      */
-    public final String getCommandPID() {
+    //public final String getCommandPID() {
+    public String getCommandPID() {
+
         return cmd.substring(3);
     }
 

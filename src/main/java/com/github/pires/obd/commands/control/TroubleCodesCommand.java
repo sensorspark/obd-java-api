@@ -156,4 +156,10 @@ public class TroubleCodesCommand extends ObdCommand {
         return AvailableCommandNames.TROUBLE_CODES.getValue();
     }
 
+    @Override
+    public String getCommandPID() {
+        //03 -- TCC
+        return "TCC";
+    }
+
 }
