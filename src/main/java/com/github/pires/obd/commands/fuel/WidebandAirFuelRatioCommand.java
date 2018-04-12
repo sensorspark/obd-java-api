@@ -58,6 +58,12 @@ public class WidebandAirFuelRatioCommand extends ObdCommand {
             return "NODATA";
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public String getResultUnit() {
+        return ":1";
+    }
+
     /**
      * <p>getWidebandAirFuelRatio.</p>
      *

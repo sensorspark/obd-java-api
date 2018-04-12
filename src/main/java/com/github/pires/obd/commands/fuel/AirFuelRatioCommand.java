@@ -58,6 +58,11 @@ public class AirFuelRatioCommand extends ObdCommand {
             return  "NODATA";
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public String getResultUnit() {
+        return ":1";
+    }
 
 
     /**
