@@ -15,6 +15,8 @@ package com.github.pires.obd.commands.engine;
 import com.github.pires.obd.commands.temperature.TemperatureCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
+import java.util.Locale;
+
 /**
  * Displays the current engine Oil temperature.
  *
@@ -37,6 +39,14 @@ public class OilTempCommand extends TemperatureCommand {
         super(other);
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public String getCalculatedResult() {
+        if(getTemperature() > 0.0)
+            return String.format(Locale.US, "%.2f", getTemperature());
+        else
+            return "NODATA";
+    }
     /** {@inheritDoc} */
     @Override
     public String getName() {

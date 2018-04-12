@@ -15,6 +15,8 @@ package com.github.pires.obd.commands.engine;
 import com.github.pires.obd.commands.PercentageObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 
+import java.util.Locale;
+
 /**
  * <p>AbsoluteLoadCommand class.</p>
  *
@@ -56,6 +58,14 @@ public class AbsoluteLoadCommand extends PercentageObdCommand {
     }
 
 
+    /** {@inheritDoc} */
+    @Override
+    public String getCalculatedResult() {
+        if(percentage > 0.0)
+            return String.format(Locale.US, "%.2f", percentage);
+        else
+            return "NODATA";
+    }
 
     /** {@inheritDoc} */
     @Override
